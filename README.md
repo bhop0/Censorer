@@ -16,13 +16,13 @@ Simple Censor Bot is an open-source bad words detector written in Python. It is 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/bhop0/simple-censor-bot.git
+   git clone https://github.com/bhop0/SimpleCensorBot.git
    cd simple-censor-bot
    ```
 
 2. Ensure you have Python installed. The project is compatible with Python 3.x.
 
-3. Run the example script:
+3. Run the example script (You can import this file into you project):
 
    ```bash
    python censor_bot.py
