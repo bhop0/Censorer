@@ -59,3 +59,7 @@ Contributions are welcome! If you find issues or have suggestions for improvemen
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
+
+## Showcases
+
+![image](https://github.com/bhop0/SimpleCensorBot/assets/146635994/cc3a6aae-11b4-4565-ab1e-bfa1b4cc98ec)
