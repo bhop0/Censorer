@@ -10,11 +10,11 @@ Before getting started, please review our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Reporting Issues
 
-If you encounter any issues or have suggestions for improvements, please check the [issue tracker](https://github.com/bhop0/simple-censor-bot/issues) to see if it has already been reported. If not, feel free to open a new issue, providing as much detail as possible, including the steps to reproduce the problem.
+If you encounter any issues or have suggestions for improvements, please check the [issue tracker](https://github.com/bhop0/SimpleCensorBot/issues) to see if it has already been reported. If not, feel free to open a new issue, providing as much detail as possible, including the steps to reproduce the problem.
 
 ### Feature Requests
 
-If you have an idea for a new feature or enhancement, please open an issue on the [issue tracker](https://github.com/bhop0/simple-censor-bot/issues) with a clear description of the proposed functionality.
+If you have an idea for a new feature or enhancement, please open an issue on the [issue tracker](https://github.com/bhop0/SimpleCensorBot/issues) with a clear description of the proposed functionality.
 
 ### Pull Requests
 
@@ -47,7 +47,7 @@ If you would like to contribute code to Simple Censor Bot, please follow these s
    git push origin feature-name
    ```
 
-6. Open a pull request on the [main repository](https://github.com/bhop0/simple-censor-bot) with a clear title and description. Reference any relevant issues.
+6. Open a pull request on the [main repository](https://github.com/bhop0/SimpleCensorBot) with a clear title and description. Reference any relevant issues.
 
 7. Your pull request will be reviewed, and feedback may be provided. Once approved, your changes will be merged.
 
