@@ -2,7 +2,7 @@ import json
 import re
 
 class CensorBot:
-    version = "0.1.0"
+    version = "0.1.1"
     print("Simple Censor Bot | Made by @bhop0 team | ver.", version, "\nGithub: https://github.com/bhop0 \n")
 
     def __init__(self, word_list_file="badwords.txt", substitution_file="bypass.json"):
@@ -36,11 +36,26 @@ class CensorBot:
         return text
 
     def detector(self, text):
-        text = text.replace("\n", "")  # Remove newline characters
-        text = self.bypass_detect(text)
-        words = re.findall(r'\b\w+\b', text)
+        text_without_spaces = text.replace(" ", "")
+        text_without_spaces = text_without_spaces.replace("\n", "")  # Remove newline characters
+        text_with_substitutions = self.bypass_detect(text_without_spaces)
 
-        detected_words = [word for word in words if word.lower() in self.external_bad_words or word.lower() in self.hardcoded_bad_words]
+        words = re.findall(r'\b\w+\b', text_with_substitutions)
+
+        detected_words = []
+
+        for i in range(len(words)):
+            word = words[i]
+            word_lower = word.lower()
+
+            # Combine single letters separated by spaces
+            while i + 1 < len(words) and len(word) == 1 and word.isalpha() and len(words[i + 1]) == 1 and words[i + 1].isalpha():
+                word += words[i + 1]
+                i += 1
+
+            if word_lower in self.external_bad_words or word_lower in self.hardcoded_bad_words:
+                detected_words.append(word_lower)
+
         return detected_words
 
 #Example usage:
