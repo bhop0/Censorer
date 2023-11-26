@@ -1,0 +1,2 @@
+# SimpleCensorBot
+Censor Bot (BETA)
