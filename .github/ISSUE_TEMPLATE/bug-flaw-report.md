@@ -1,16 +1,16 @@
 ---
-name: Bug report
+name: Bug/flaw report
 about: Create a report to help us improve
-title: "[BUG]"
-labels: bug
+title: "[BUG/FLAW]"
+labels: ''
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Describe the bug/flaw**
+A clear and concise description of what the bug/flaw is.
 
-**To Reproduce**
+**To Reproduce(Bug)**
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
@@ -24,15 +24,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
+ - OS: [e.g. Windows 10]
  - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+ - Version [e.g. 23H2]
+ - Python Version [e.g. 3.12]
 
 **Additional context**
 Add any other context about the problem here.
