@@ -1,19 +1,21 @@
 import json
 import re
+import os
 
 class CensorBot:
-    version = "0.1.1"
+    version = "0.1.2"
     print("Simple Censor Bot | Made by @bhop0 team | ver.", version, "\nGithub: https://github.com/bhop0 \n")
 
     def __init__(self, word_list_file="badwords.txt", substitution_file="bypass.json"):
+        script_dir = os.path.dirname(os.path.realpath(__file__))
 
-        self.external_bad_words = self.load_badwords_list(word_list_file)
-        self.substitution_dict = self.load_bypass_dict(substitution_file)
+        self.external_bad_words = self.load_badwords(os.path.join(script_dir, word_list_file))
+        self.substitution_dict = self.load_bypass_dict(os.path.join(script_dir, substitution_file))
 
         # Hardcoded bad words
         self.hardcoded_bad_words = ["niggas", "negus", "nigga", "niggas'", "nigga's"]
 
-    def load_badwords_list(self, word_list_file):
+    def load_badwords(self, word_list_file):
         try:
             with open(word_list_file, "r", encoding="utf-8") as file:
                 return [line.strip().lower() for line in file.readlines()]
@@ -36,7 +38,7 @@ class CensorBot:
         return text
 
     def detector(self, text):
-        text_without_spaces = text.replace(" ", "")
+        text_without_spaces = text.replace(" ", "") # Remove spaces
         text_without_spaces = text_without_spaces.replace("\n", "")  # Remove newline characters
         text_with_substitutions = self.bypass_detect(text_without_spaces)
 
@@ -59,7 +61,9 @@ class CensorBot:
         return detected_words
 
 #Example usage:
+
 """
+
 if __name__ == "__main__":
     SimpleCensorBot = CensorBot()
 
@@ -75,4 +79,5 @@ if __name__ == "__main__":
             print("Detected bad words:", detected_words, "\n")
         else:
             print("No bad words detected.\n")
+            
 """
