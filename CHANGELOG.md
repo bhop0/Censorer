@@ -12,4 +12,8 @@ Simple Censor Bot appeared.
 ## - version 0.2.0
 1. Special characters are now handled correctly.
 
+## - version 0.3.0_PRE1
+1. More supported special charactars.
+2. Supported Latin characters (a, b, c)
+
 ...
