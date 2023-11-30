@@ -2,12 +2,6 @@
 
 Simple Censor Bot is an open-source bad words detector written in Python. It is designed to identify and filter out offensive language from text. This project is not just a library but a standalone application.
 
-## Features
-
-- **External Bad Words List:** Utilizes an external bad words list from a specified file (`badwords.txt` by default).
-- **Substitution Handling:** Can detect words even when substituted with characters, leveraging a substitution dictionary from a JSON file (`bypass.json` by default).
-- **Hardcoded Bad Words:** Includes a hardcoded list of bad words for enhanced detection accuracy.
-
 ## Installation
 
 1. Clone the repository:
