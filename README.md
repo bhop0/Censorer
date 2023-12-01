@@ -24,8 +24,10 @@ Simple Censor Bot is an open-source bad words detector written in Python. It is 
 The `CensorBot` class can be utilized in your Python projects for detecting and handling offensive language. The example demonstrates a simple interactive use case where the user can input text, and the bot detects and outputs any detected bad words.
 
 ```python
+from SimpleCensorBot.CensorBotV1 import CensorBot
+
 if __name__ == "__main__":
-    SimpleCensorBot = CensorBot()
+    bot = CensorBot()
 
     while True:
         text = input("Enter a text (type 'exit' to end the program): ")
@@ -34,11 +36,11 @@ if __name__ == "__main__":
             print("Exiting the program.")
             break
 
-        detected_words = SimpleCensorBot.detector(text)
+        detected_words = bot.detector(text)
         if detected_words:
-            print("Detected bad words:", detected_words, "\n")
+            print("Detected bad words:", detected_words)
         else:
-            print("No bad words detected.\n")
+            print("No bad words detected.")
 ```
 
 Feel free to integrate the `CensorBot` class into your projects for content moderation or use it as a starting point for building more advanced text filtering systems.
