@@ -8,6 +8,7 @@ class CensorBot:
 
     def __init__(self, word_list_file="badwords.txt", substitution_file="bypass.json", config_file="config.txt"):
         script_dir = os.path.dirname(os.path.realpath(__file__))
+        #some files
 
         self.external_bad_words = self.load_bad_words(os.path.join(script_dir, word_list_file))
         self.substitution_dict = self.load_substitution_dict(os.path.join(script_dir, substitution_file))
@@ -15,12 +16,13 @@ class CensorBot:
         self.strict_mode = self.config.get('strict_mode', False)
         self.strict_bad_words = self.load_bad_words(os.path.join(script_dir, 'strict.txt')) if self.strict_mode else []
 
+
     def load_bad_words(self, word_list_file):
         try:
             with open(word_list_file, "r", encoding="utf-8") as file:
                 return [line.strip().lower() for line in file.readlines()]
         except FileNotFoundError:
-            print(f"Error: Bad words file '{word_list_file}' not found.")
+            print(f"Error: File '{word_list_file}' not found.")
             return []
 
     def load_substitution_dict(self, substitution_file):
@@ -28,7 +30,7 @@ class CensorBot:
             with open(substitution_file, "r", encoding="utf-8") as file:
                 return json.load(file)
         except FileNotFoundError:
-            print(f"Error: Substitution file '{substitution_file}' not found.")
+            print(f"Error: File '{substitution_file}' not found.")
             return {}
 
     def load_config(self, config_file):
@@ -37,7 +39,7 @@ class CensorBot:
                 config_lines = [line.strip() for line in file.readlines()]
                 self.config = {key: bool(int(value)) for key, value in (line.split(':') for line in config_lines)}
         except FileNotFoundError:
-            print(f"Error: Config file '{config_file}' not found.")
+            print(f"Error: File '{config_file}' not found.")
             self.config = {}
 
     def apply_substitutions(self, text):
@@ -56,7 +58,8 @@ class CensorBot:
             word = words[i]
             word_lower = word.lower()
 
-            # Combine single letters separated by spaces
+            # combine single letters separated by spaces
+            # TODO: remove this shit
             while i + 1 < len(words) and len(word) == 1 and word.isalpha() and len(words[i + 1]) == 1 and words[i + 1].isalpha():
                 word += words[i + 1]
                 i += 1
