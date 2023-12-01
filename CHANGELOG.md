@@ -13,14 +13,14 @@
 (+) Special characters are now handled correctly.
 
 ## - version 0.3.0_PRE1
-(+) More supported special charactars. \n
-(+) Supported Latin characters (a, b, c)
+1. (+) More supported special charactars. 
+2. (+) Supported Latin characters (a, b, c)
 
 ## - version 0.3.0_PRE2
-(+) Supported Latin D~L
-(-) Removed unnecessary functions
+1. (+) Supported Latin D~L
+2. (-) Removed unnecessary functions
 
 ## - version 0.3.0_PRE3 + PRE4
-(+) Config file
-(+) Strict mode
-(~) Fixed space (" ") handling
+1. (+) Config file
+2. (+) Strict mode
+3. (~) Fixed space (" ") handling
