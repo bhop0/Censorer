@@ -3,14 +3,15 @@ import os
 import re
 
 class CensorBot:
-    version = "0.3.0_PER2"
+    version = "0.3.0_PER3"
     print("Simple Censor Bot | Made by @bhop0 team | ver.", version, "\nGithub: https://github.com/bhop0 \n")
 
-    def __init__(self, word_list_file="badwords.txt", substitution_file="bypass.json"):
+    def __init__(self, word_list_file="badwords.txt", substitution_file="bypass.json", config_file="config.txt"):
         script_dir = os.path.dirname(os.path.realpath(__file__))
 
         self.external_bad_words = self.load_bad_words(os.path.join(script_dir, word_list_file))
         self.substitution_dict = self.load_substitution_dict(os.path.join(script_dir, substitution_file))
+        self.load_config(os.path.join(script_dir, config_file))
 
     def load_bad_words(self, word_list_file):
         try:
@@ -27,6 +28,15 @@ class CensorBot:
         except FileNotFoundError:
             print(f"Error: Substitution file '{substitution_file}' not found.")
             return {}
+
+    def load_config(self, config_file):
+        try:
+            with open(config_file, "r", encoding="utf-8") as file:
+                config_lines = [line.strip() for line in file.readlines()]
+                self.config = {key: bool(int(value)) for key, value in (line.split(':') for line in config_lines)}
+        except FileNotFoundError:
+            print(f"Error: Config file '{config_file}' not found.")
+            self.config = {}
 
     def apply_substitutions(self, text):
         for original, substitutions in self.substitution_dict.items():
@@ -49,14 +59,13 @@ class CensorBot:
                 word += words[i + 1]
                 i += 1
 
-            if word_lower in self.external_bad_words:
+            if word_lower in self.external_bad_words and self.config.get('enable_detection', True):
                 detected_words.append(word_lower)
 
         return detected_words
 
-
 if __name__ == "__main__":
-    detector = CensorBot()
+    bot = CensorBot()
 
     while True:
         text = input("Enter a text (type 'exit' to end the program): ")
@@ -65,7 +74,7 @@ if __name__ == "__main__":
             print("Exiting the program.")
             break
 
-        detected_words = detector.detector(text)
+        detected_words = bot.detector(text)
         if detected_words:
             print("Detected bad words:", detected_words)
         else:
