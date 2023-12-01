@@ -3,7 +3,7 @@ import os
 import re
 
 class CensorBot:
-    version = "0.3.0_PER3"
+    version = "0.3.0_PER4"
     print("Simple Censor Bot | Made by @bhop0 team | ver.", version, "\nGithub: https://github.com/bhop0 \n")
 
     def __init__(self, word_list_file="badwords.txt", substitution_file="bypass.json", config_file="config.txt"):
@@ -12,6 +12,8 @@ class CensorBot:
         self.external_bad_words = self.load_bad_words(os.path.join(script_dir, word_list_file))
         self.substitution_dict = self.load_substitution_dict(os.path.join(script_dir, substitution_file))
         self.load_config(os.path.join(script_dir, config_file))
+        self.strict_mode = self.config.get('strict_mode', False)
+        self.strict_bad_words = self.load_bad_words(os.path.join(script_dir, 'strict.txt')) if self.strict_mode else []
 
     def load_bad_words(self, word_list_file):
         try:
@@ -60,6 +62,9 @@ class CensorBot:
                 i += 1
 
             if word_lower in self.external_bad_words and self.config.get('enable_detection', True):
+                detected_words.append(word_lower)
+
+            if self.strict_mode and word_lower in self.strict_bad_words:
                 detected_words.append(word_lower)
 
         return detected_words
