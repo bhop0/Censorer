@@ -3,7 +3,7 @@ import os
 import re
 
 class CensorBot:
-    version = "0.3.0_PER4"
+    version = "0.3.0"
     print("Simple Censor Bot | Made by @bhop0 team | ver.", version, "\nGithub: https://github.com/bhop0 \n")
 
     def __init__(self, word_list_file="badwords.txt", substitution_file="bypass.json", config_file="config.txt"):
