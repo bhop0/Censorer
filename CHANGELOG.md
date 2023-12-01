@@ -13,7 +13,7 @@
 (+) Special characters are now handled correctly.
 
 ## - version 0.3.0_PRE1
-(+) More supported special charactars.
+(+) More supported special charactars. \n
 (+) Supported Latin characters (a, b, c)
 
 ## - version 0.3.0_PRE2
