@@ -20,4 +20,7 @@
 (+) Supported Latin D~L
 (-) Removed unnecessary functions
 
-...
+## - version 0.3.0_PRE3 + PRE4
+(+) Config file
+(+) Strict mode
+(~) Fixed space (" ") handling
