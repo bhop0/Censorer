@@ -1,1 +1,2 @@
 enable_detection:1
+strict_mode:0
