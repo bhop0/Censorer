@@ -24,3 +24,10 @@
 1. (+) Config file
 2. (+) Strict mode
 3. (~) Fixed space (" ") handling
+
+## - version 0.3.0
+(?) Missing
+
+## - version 1.0.0.0_PRE1
+1. (~) Reconstruct the project
+2. (+) Supported Simplified Chinese
