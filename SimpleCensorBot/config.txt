@@ -1,0 +1,4 @@
+enable_detection:1
+strict_mode:1
+#####SPLITLINE#####
+enable_chs_detection:0
