@@ -1,13 +1,13 @@
-# SimpleCensorBot
+# Censorer
 
-Simple Censor Bot is an open-source bad words detector written in Python. It is designed to identify and filter out offensive language from text. This project is not just a library but a standalone application.
+Censorer is an open-source bad words detector written in Python. It is designed to identify and filter out offensive language from text. This project is not just a library but a standalone application.
 
 ## Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/bhop0/SimpleCensorBot.git
+   git clone https://github.com/bhop0/Censorer.git
    cd SimpleCensorBot
    ```
 
